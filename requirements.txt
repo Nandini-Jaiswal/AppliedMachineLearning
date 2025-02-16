@@ -5,3 +5,5 @@ scikit-learn
 seaborn
 wordcloud
 prettytable
+dvc
+dvc[gdrive]
