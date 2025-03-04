@@ -4,3 +4,4 @@ This repository contains the coursework for the `Applied Machine Learning` cours
 ## Assignments
 
 - [Assignment 1](Assignment_1/Readme.md)
+- [Assignment 2](Assignment_2/Readme.md)
