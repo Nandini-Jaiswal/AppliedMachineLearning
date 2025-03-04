@@ -7,3 +7,4 @@ wordcloud
 prettytable
 dvc
 dvc[gdrive]
+mlflow
