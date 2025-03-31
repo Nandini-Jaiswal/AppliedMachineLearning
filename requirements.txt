@@ -2,6 +2,8 @@ nltk
 pandas
 matplotlib
 scikit-learn
+pytest
+coverage
 seaborn
 wordcloud
 prettytable

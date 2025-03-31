@@ -6,3 +6,6 @@ venv/
 # Ignore MLflow files
 mlruns/
 mlartifacts/
+# Ignore python cache files
+__pycache__/
+*.py[cod]
