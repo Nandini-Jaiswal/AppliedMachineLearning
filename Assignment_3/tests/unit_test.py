@@ -1,7 +1,7 @@
 from score import score
 import pickle
 
-with open('assignment_3/best_model.pkl', 'rb') as file:
+with open('./Assignment_3/best_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 def test_score():
