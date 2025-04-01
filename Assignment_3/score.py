@@ -23,11 +23,11 @@ def preprocess_text(text):
     text = ' '.join([word for word in text.split() if word not in stop_words])
     return text
 
-def score(text: str, model: sklearn.pipeline.Pipeline, threshold: float):
+def score(text: str, model: sklearn.pipeline.Pipeline, threshold: float) -> tuple[bool, float]:
     """Score a single text input using a trained model and threshold.
 
     This function processes a text input and returns both the binary prediction
-    and the probability score for toxic content classification.
+    and the probability score for spam content classification.
 
     Args:
         text (str): The input text to be classified
@@ -36,10 +36,10 @@ def score(text: str, model: sklearn.pipeline.Pipeline, threshold: float):
 
     Returns:
         tuple: A tuple containing:
-            - prediction (int): Binary prediction (1 for toxic, 0 for non-toxic)
-            - propensity (float): Probability score for toxic class
+            - prediction (int): Binary prediction (1 for spam, 0 for ham)
+            - propensity (float): Probability score for spam class
     """
     text_list = [preprocess_text(text)]
     propensity = model.predict_proba(text_list)[:, 1][0]
-    prediction = 1 if propensity >= threshold else 0
+    prediction = True if propensity >= threshold else False
     return prediction, propensity

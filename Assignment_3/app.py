@@ -4,7 +4,7 @@ import pickle
 
 app = Flask(__name__)
 
-with open('Assignment_3/best_model.pkl', 'rb') as file:
+with open('./Assignment_3/best_model.pkl', 'rb') as file:
   model = pickle.load(file)
 
 @app.route('/test', methods=['GET'])
@@ -24,7 +24,7 @@ def score_endpoint():
     prediction, propensity = score(text, model, threshold)
     
     return jsonify({
-        'prediction': prediction,
+        'prediction': "spam" if prediction else "ham",
         'propensity': propensity
     })
 
