@@ -24,7 +24,7 @@ def score_endpoint():
     prediction, propensity = score(text, model, threshold)
     
     return jsonify({
-        'prediction': prediction,
+        'prediction': "spam" if prediction else "ham",
         'propensity': propensity
     })
 

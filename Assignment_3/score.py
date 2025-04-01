@@ -23,7 +23,7 @@ def preprocess_text(text):
     text = ' '.join([word for word in text.split() if word not in stop_words])
     return text
 
-def score(text: str, model: sklearn.pipeline.Pipeline, threshold: float):
+def score(text: str, model: sklearn.pipeline.Pipeline, threshold: float) -> tuple[bool, float]:
     """Score a single text input using a trained model and threshold.
 
     This function processes a text input and returns both the binary prediction
@@ -41,5 +41,5 @@ def score(text: str, model: sklearn.pipeline.Pipeline, threshold: float):
     """
     text_list = [preprocess_text(text)]
     propensity = model.predict_proba(text_list)[:, 1][0]
-    prediction = 1 if propensity >= threshold else 0
+    prediction = True if propensity >= threshold else False
     return prediction, propensity
