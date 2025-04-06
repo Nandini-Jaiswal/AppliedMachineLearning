@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Store the current directory
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# Check if venv exists
+if [ -d "$REPO_ROOT/venv" ]; then
+    # Activate virtual environment
+    source "$REPO_ROOT/venv/Scripts/activate" 2>/dev/null || source "$REPO_ROOT/venv/bin/activate"
+else
+    echo "Error: Virtual environment not found. Please create one first."
+    exit 1
+fi
+
+# Run pytest
+echo "Running pytest..."
+pytest ./Assignment_4
+
+# Store the exit code
+TEST_EXIT_CODE=$?
+
+# Deactivate virtual environment
+deactivate
+
+# If tests failed, prevent the commit
+if [ $TEST_EXIT_CODE -ne 0 ]; then
+    echo "Tests failed! Commit aborted."
+    exit 1
+fi
+
+exit 0
