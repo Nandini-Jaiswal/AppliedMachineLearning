@@ -19,9 +19,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run tests with pytest
-        run: pytest -s
+        run: pytest ./Assignment_3
       - name: Get coverage report
-        run: coverage run -m pytest
+        run: coverage run -m pytest ./Assignment_3
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
