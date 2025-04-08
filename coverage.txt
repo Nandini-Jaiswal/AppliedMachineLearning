@@ -1,0 +1,11 @@
+Name                                     Stmts   Miss  Cover
+------------------------------------------------------------
+Assignment_3/app.py                         18      1    94%
+Assignment_3/score.py                       19      0   100%
+Assignment_3/tests/__init__.py               0      0   100%
+Assignment_3/tests/conftest.py               7      0   100%
+Assignment_3/tests/integration_test.py      33      0   100%
+Assignment_3/tests/unit_test.py             47      0   100%
+Assignment_4/tests/docker_test.py           43      2    95%
+------------------------------------------------------------
+TOTAL                                      167      3    98%
