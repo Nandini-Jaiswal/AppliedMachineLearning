@@ -59,7 +59,7 @@ The tests folder currently contains the most important file:
 6. **Docker Cleanup**  
    - At the end of the tests, the Docker container is stopped and removed to clean up resources.
 
-### 4. `Dockerfile`
+### 4. [`Dockerfile`](./../Dockerfile)
 
 The `Dockerfile` defines the instructions to build a lightweight Docker image for the Flask scoring app.
 
@@ -83,7 +83,7 @@ The `Dockerfile` defines the instructions to build a lightweight Docker image fo
    Sets the default command to run `app.py` when the container starts:
    `python app.py`
 
-### 5. Pre-commit Hook (`pre-commit`)
+### 5. Pre-commit Hook [`pre-commit`](./../.githooks/pre-commit)
 
 The **pre-commit Git hook script** ensures that all tests pass before allowing a commit to the repository.
 
