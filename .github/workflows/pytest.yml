@@ -1,14 +1,9 @@
 name: Pytest
 
-on:
-  workflow_run:
-    workflows: ["Docker test"]
-    types:
-      - completed
+on: [push, pull_request]
 
 jobs:
   build:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,7 +23,7 @@ jobs:
       - name: Get coverage report
         run: |
           coverage run -m pytest -s
-          coverage report
+          coverage report > coverage.txt
           cat coverage.txt
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
