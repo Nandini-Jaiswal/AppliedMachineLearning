@@ -2,9 +2,7 @@ import time
 import requests
 import subprocess
 import os
-import pytest
 
-@pytest.mark.order(1)
 def test_docker():
     """Test if the docker container is running"""
 
@@ -21,7 +19,7 @@ def test_docker():
     if result != 0:
         raise Exception(f"Docker run failed with exit code {result}")
     
-    time.sleep(20)
+    time.sleep(10)
 
     response = requests.get("http://127.0.0.1:5000/test")
 
