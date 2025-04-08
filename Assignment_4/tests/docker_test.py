@@ -2,6 +2,7 @@ import time
 import requests
 import subprocess
 import os
+import pytest
 
 @pytest.mark.order(1)
 def test_docker():
