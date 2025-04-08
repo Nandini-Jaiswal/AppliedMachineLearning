@@ -3,6 +3,7 @@ import requests
 import subprocess
 import os
 
+@pytest.mark.order(1)
 def test_docker():
     """Test if the docker container is running"""
 
