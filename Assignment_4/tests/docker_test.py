@@ -19,7 +19,7 @@ def test_docker():
     if result != 0:
         raise Exception(f"Docker run failed with exit code {result}")
     
-    time.sleep(10)
+    time.sleep(20)
 
     response = requests.get("http://127.0.0.1:5000/test")
 
